@@ -1,22 +1,33 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
-import Landingpage from "./pages/auth/Landingpage";
-import Login from "./pages/auth/Login";
-import About from "./components/About";
+import Landingpage from "./pages/public/Landingpage";
+import Login from "./pages/auth/LoginPage";
+import About from "./pages/public/About";
 
 
-import SelectionSignup from "./pages/auth/Signup";
-import ClientSignup from "./pages/signup/client/Clientsignup";
-import FreelancerSignupForm from "./pages/signup/freelancer/Freelancersignup01";
-import BasicDetailsForm from "./pages/signup/freelancer/Freelancersignup02";
-import DomainSelection from "./pages/signup/freelancer/Freelancersignup03";
-import SkillSelection from "./pages/signup/freelancer/Freelancersignup04";
-import TitleBioForm from "./pages/signup/freelancer/Freelancersignup05";
-import ExperiencePage from "./pages/signup/freelancer/Freelancersignup06";
-import EducationPage from "./pages/signup/freelancer/Freelancersignup07";
-import LanguageSelection from "./pages/signup/freelancer/Freelancersignup08";
-import HourlyRatePage from "./pages/signup/freelancer/Freelancersignup09";
+import SelectionSignup from "./pages/auth/RoleSelectionPage";
+import ClientSignup from "./pages/client/Clientsignup";
+import ClientOtp from "./pages/client/clientOtpVerification";
+import FreelancerSignupForm from "./pages/freelancer/Step01SignupLayout";
+import FreelancerOtp from "./pages/freelancer/Step01OtpVerification";
+import BasicDetailsForm from "./pages/freelancer/Step02BasicDetails";
+import DomainSelection from "./pages/freelancer/Step03DomainSelection";
+import SkillSelection from "./pages/freelancer/Step04SkillsSelection";
+import TitleBioForm from "./pages/freelancer/Step05TitleBio";
+import ExperiencePage from "./pages/freelancer/Step06WorkExperience";
+import EducationPage from "./pages/freelancer/Step07Education";
+import LanguageSelection from "./pages/freelancer/Step08LanguageSelection";
+import HourlyRatePage from "./pages/freelancer/Step09HourlyRate";
+import WelcomeMsge from "./pages/shared/Congratulations";
+import Dashboard from "./pages/dashboard/DashboardPage";
+import FrogetPassword from './pages/auth/ForgetPasswordPage';
+
+import D from './hooks/Demo';
+import J from './pages/dashboard/Menu/JobPostingForm';
+
+
+
 
 const App = () => {
   return (
@@ -28,8 +39,10 @@ const App = () => {
         {/* Step 1 */}
         <Route path="/signup" element={<SelectionSignup />} />
         <Route path="/clientsignup" element={<ClientSignup />} />
+        <Route path="/clientotp" element={<ClientOtp />} />
         {/* Step 2: Sign up details */}
         <Route path="/freelancersignup" element={<FreelancerSignupForm />} />
+        <Route path="/freelancerotp" element={<FreelancerOtp />} />
         {/* Step 3: Basic details (DOB, Address) */}
         <Route path="/details" element={<BasicDetailsForm />} />
         {/* Step 4: Domain Selection */}
@@ -46,6 +59,15 @@ const App = () => {
         <Route path="/languages" element={<LanguageSelection />} />
 
         <Route path="/ratepage" element={<HourlyRatePage />} />
+
+        <Route path="/welcome" element={<WelcomeMsge />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/forgetpassword" element={<FrogetPassword />} /> 
+
+        <Route path="/demo" element={<D />} />
+
+        <Route path="/j" element={<J />} />
 
         {/* You can add a 404 Not Found page here if needed */}
       </Routes>

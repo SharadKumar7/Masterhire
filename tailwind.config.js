@@ -15,6 +15,7 @@ export default {
         'screen-bg': '#1a2744',
       },
       fontFamily: {
+        jaro: ['Jaro', 'sans-serif'],
         sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
       },
       // Adding custom animations and keyframes
